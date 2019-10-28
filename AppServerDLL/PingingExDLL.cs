@@ -7,6 +7,7 @@ namespace PingResults
     {
         static void Main(string[] args)
         {
+            // CS Program
             Ping ping = new Ping();
             PingReply reply = ping.Send("google.com");
             Console.WriteLine($"Ping IP Address: {reply.Address}");
