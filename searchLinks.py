@@ -60,6 +60,17 @@ def writeResults(contain, search_str, base_path):
             for v in contain[k]:
                 c.writerow([v])
 
+def userInput():
+    search_input = input()
+    search_str = []
+
+    if ',' in search_input:
+        search_str = search_input.split(',')
+    else:
+        search_str.append(search_input)
+
+    return search_str
+
 def main():
     
     base_path = os.path.dirname(sys.argv[0])
@@ -70,14 +81,8 @@ def main():
     print('Add multiple searches with a comma')
     print('')
     print('Search for tag:')
-    
-    search_input = input()
-    search_str = []
 
-    if ',' in search_input:
-        search_str = search_input.split(',')
-    else:
-        search_str.append(search_input)
+    search_str = userInput()
     
     window = readLinks(base_path)
     contain = aggregateSearch(window, search_str)
@@ -87,4 +92,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
