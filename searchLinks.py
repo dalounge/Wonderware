@@ -75,9 +75,9 @@ def main():
     
     base_path = os.path.dirname(sys.argv[0])
 
-    print('This utility searches this directory for the first .txt file which should be')
-    print('your links and details.  Print from InTouch Links and Details/Window Scripts/All Scripts')
-    print('currently works for WW IT 2017 U3 SP1')
+    print('Go to WindowMaker -> File -> Print -> Check All Windows -> check Links and Details')
+    print('-> check Window Scripts -> check all scripts.  Print and put .txt same folder as main.exe')
+    print('Currently works for WW IT 2017 U3 SP1')
     print('Add multiple searches with a comma')
     print('')
     print('Search for tag:')
