@@ -63,13 +63,18 @@ def main():
     
     base_path = os.path.dirname(sys.argv[0])
 
+    print('This utility searches this directory for the first .txt file which should be')
+    print('your links and details.  Print from InTouch Links and Details/Window Scripts/All Scripts')
+    print('currently works for WW IT 2017 U3 SP1')
+    print('')
     print('Search for tag:')
+    
     search_str = input()
     
     window = readLinks(base_path)
     contain = aggregateSearch(window, search_str)
     writeResults(contain, search_str, base_path)
-    
+
     os.startfile(os.path.join(base_path, 'results.csv'), 'open')
 
 if __name__ == '__main__':
