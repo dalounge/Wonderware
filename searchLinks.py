@@ -43,8 +43,9 @@ def aggregateSearch(window, search_str):
             contain[row] = []
             current_key = row
 
-        if search_str.lower() in row.lower():
-            contain[current_key].append(row)
+        for search in search_str:
+            if search.lower() in row.lower():
+                contain[current_key].append(row)
 
     return contain
 
@@ -66,10 +67,17 @@ def main():
     print('This utility searches this directory for the first .txt file which should be')
     print('your links and details.  Print from InTouch Links and Details/Window Scripts/All Scripts')
     print('currently works for WW IT 2017 U3 SP1')
+    print('Add multiple searches with a comma')
     print('')
     print('Search for tag:')
     
-    search_str = input()
+    search_input = input()
+    search_str = []
+
+    if ',' in search_input:
+        search_str = search_input.split(',')
+    else:
+        search_str.append(search_input)
     
     window = readLinks(base_path)
     contain = aggregateSearch(window, search_str)
@@ -79,3 +87,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
